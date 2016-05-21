@@ -14,6 +14,8 @@ option(EASTL_BUILD_TESTS "Enable generation of build files for tests" OFF)
 # Sub-projects
 #-------------------------------------------------------------------------------------------
 add_subdirectory(test/packages/EABase)
+add_subdirectory(test/packages/EAAssert)
+add_subdirectory(test/packages/EAStdC)
 
 if(EASTL_BUILD_TESTS OR EASTL_BUILD_BENCHMARK)
     add_subdirectory(test/packages/EAAssert)
@@ -75,7 +77,7 @@ target_include_directories(EASTL PUBLIC include)
 #-------------------------------------------------------------------------------------------
 # Libraries
 #-------------------------------------------------------------------------------------------
-target_link_libraries(EASTL EABase)
+target_link_libraries(EASTL EABase EAStdC EAAssert)
 
 #-------------------------------------------------------------------------------------------
 # Installation
